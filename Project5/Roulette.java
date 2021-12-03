@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Write a description of class Roulette here.
  *
@@ -7,26 +7,27 @@
  */
 public class Roulette
 {
+    private Random rand1;
+    
+    
+    
+    
     public Roulette()
     {
-        
+        Scanner input = new Scanner(System.in);
+        int single;
+        int bet = 0;
+        rand1 = new Random();
     }
     
-    public boolean rouletteRisk(String risk)
+    public boolean winSingleRoulette(int bet, int userNum)
     {
-        if(risk.equals("high"))
+        int rouletteNum = rand1.nextInt(37);
+        if(rouletteNum == userNum)
         {
-            System.out.println("Type the number between 0-36 you would like to bet on!");
-            
+            System.out.println();
         }
-        else if(risk.equals("medium"))
-        {
-            
-        }
-        else if (risk.equals("low"))
-        {
-            
-        }
+
         return true;
     }
 }

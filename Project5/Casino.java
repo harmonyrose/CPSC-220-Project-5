@@ -22,7 +22,7 @@ public class Casino
         System.out.println("Your balance: $" + balance);
         System.out.println();
         System.out.println("Which game would you like to play? slots, roulette, or black jack");
-        System.out.println("(type 'q' to quit)");
+        System.out.println("(or type 'q' to quit)");
         game = scan.nextLine();
         
         if(game.equals("slots"))
@@ -49,7 +49,7 @@ public class Casino
                 {
                     System.out.println();
                     System.out.println("Congratulations! $100 will be added to your balance :)");
-                    balance += 50;
+                    balance += 100;
                 }
                 else if(slotsgame.win == true && slotsgame.win7 == true)
                 {
@@ -65,10 +65,49 @@ public class Casino
                 
             }
             
+
+        }
+        else if(game.equals("roulette"))
+        {
+            System.out.println("====================");
+            System.out.println("Welcome to Roulette!");
+            System.out.println("====================");
+            System.out.println();
+            System.out.println("In roulette, you get to choose the stakes and how much you bet!");
+            System.out.println("Keep in mind that the higher the risk, the higher the reward ;)");
+            System.out.println("To start, what level of risk would you like to play with?");
+            System.out.println("Please enter 'high', 'medium', or 'low'");
+            String risk = scan.nextLine();
+            if(!risk.equals("high") && !risk.equals("medium") && !risk.equals("low"))
+            {
+                System.out.println("You entered an invalid risk level. Please enter 'high', 'medium', or 'low'");
+                risk = scan.nextLine();
+            }
             
+            if(risk.equals("high"))
+            {
+            System.out.println("You've chosen a high risk game of roulette. You can only bet on one number, and if you");
+            System.out.println("win, you will win 40x the bet you placed!");
+            System.out.println("How much would you like to bet? (please type a number without '$')");
             
+            System.out.println("Type the number between 0-36 you would like to bet on!");
+            
+            }
+            else if(risk.equals("medium"))
+            {
+            
+            }
+            else if (risk.equals("low"))
+            {
+            
+            }
+            else
+            {
+            System.out.println("Please enter a valid game: slots, roulette, or black jack");
+            game = scan.nextLine();
+            }
         }
     }
-    System.out.println("Your ending balance is $" + balance);
+    System.out.println("Your ending balance is $" + balance + ". Thanks for playing!");
 }
 }
