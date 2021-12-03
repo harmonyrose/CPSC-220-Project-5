@@ -12,13 +12,15 @@ public class Casino
         Scanner scan = new Scanner(System.in);
         int balance = 100;
         String game = new String();
-        while (game != "q")
+        while (!game.equals("q"))
         {
+        System.out.println();
         System.out.println("======================");
         System.out.println("Welcome to the Casino!");
         System.out.println("======================");
         System.out.println();
         System.out.println("Your balance: $" + balance);
+        System.out.println();
         System.out.println("Which game would you like to play? slots, roulette, or black jack");
         System.out.println("(type 'q' to quit)");
         game = scan.nextLine();
@@ -66,10 +68,7 @@ public class Casino
             
             
         }
-        
-        
-        
-        
     }
+    System.out.println("Your ending balance is $" + balance);
 }
 }

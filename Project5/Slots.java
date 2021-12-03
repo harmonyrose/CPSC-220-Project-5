@@ -34,31 +34,25 @@ public class Slots
         int slot1 = rand1.nextInt(10);
         int slot2 = rand2.nextInt(10);
         int slot3 = rand3.nextInt(10);
+        
+            System.out.println("----------");
+            System.out.println("||" + slot1 + " " + slot2 + " " + slot3 + "||");
+            System.out.println("----------");
+        
         if(slot1 != slot2 || slot1 != slot3 || slot2 != slot3)
         {
             win = false;
             win7 = false;
-            System.out.println("------");
-            System.out.println(slot1 + " " + slot2 + " " + slot3);
-            System.out.println("------");
         }
         else if(slot1 == slot2 && slot1 == slot3 && slot2 == slot3 && slot1 != 7)
         {
             win = true;
             win7 = false;
-            System.out.println("------");
-            System.out.println(slot1 + " " + slot2 + " " + slot3);
-            System.out.println("------");
-            System.out.println("Congratulations! :)");
         }
         else
         {
             win = true;
             win7 = true;
-            System.out.println("------");
-            System.out.println(slot1 + " " + slot2 + " " + slot3);
-            System.out.println("------");
-            System.out.println("Congratulations! :)");
         }
     }
 }
