@@ -17,7 +17,6 @@ public class Roulette
         if(risk.equals("high"))
         {
             System.out.println("Type the number between 0-36 you would like to bet on!");
-            int  bet = scan.nextInt();
             
         }
         else if(risk.equals("medium"))
@@ -28,5 +27,6 @@ public class Roulette
         {
             
         }
+        return true;
     }
 }

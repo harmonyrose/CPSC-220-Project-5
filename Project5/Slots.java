@@ -53,6 +53,7 @@ public class Slots
         }
         else
         {
+            win = true;
             win7 = true;
             System.out.println("------");
             System.out.println(slot1 + " " + slot2 + " " + slot3);
