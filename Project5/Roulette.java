@@ -28,13 +28,14 @@ public class Roulette
     
     public boolean winHigh(int bet, int userNum)
     {
-        int rouletteNum = rand1.nextInt(37);
-        if(rouletteNum == userNum)
+        if(getRouletteNum() == userNum)
         {
-            System.out.println();
+            return true;
         }
-
-        return true;
+        else
+        {
+            return false;
+        }
     }
     
     public boolean winLow(String oddsOrEvens)
@@ -49,6 +50,12 @@ public class Roulette
             return false;
         }
     } 
+
+    public int getRouletteNum()
+    {
+        int rouletteNum = rand1.nextInt();
+        return rouletteNum;
+    }
     
     
 }

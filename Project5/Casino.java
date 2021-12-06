@@ -69,14 +69,19 @@ public class Casino
         }
         else if(game.equals("roulette"))
         {
+            String yesNo = "y";
+            while(yesNo.equals("y"))
+            {
             System.out.println("====================");
             System.out.println("Welcome to Roulette!");
             System.out.println("====================");
             System.out.println();
             System.out.println("In roulette, you get to choose the stakes and how much you bet!");
-            System.out.println("Keep in mind that the higher the risk, the higher the reward ;)");
+            System.out.println();
+            System.out.println("Keep in mind that the higher the risk, the higher the reward");
+            System.out.println();
             System.out.println("To start, what level of risk would you like to play with?");
-            System.out.println("Please enter 'high', 'medium', or 'low'");
+            System.out.println("Please enter 'high' or 'low'");
             String risk = scan.nextLine();
             if(!risk.equals("high") && !risk.equals("low"))
             {
@@ -88,6 +93,7 @@ public class Casino
             {
                 System.out.println("You've chosen a high risk game of roulette. You can only bet on one number, and if you");
                 System.out.println("win, you will win 40x the bet you placed!");
+                System.out.println();
                 System.out.println("How much would you like to bet? (please type a number without '$')");
                 int bet = scan.nextInt();
                 System.out.println("Type the number between 0-36 you would like to bet on!");
@@ -95,13 +101,14 @@ public class Casino
                 Roulette rouletteGame = new Roulette();
                 if(rouletteGame.winHigh(bet, userNum) == true)
                 {
-                System.out.println("Congratulations! The roulette wheel landed on " + userNum);
+                System.out.println("Congratulations! The roulette wheel landed on " + rouletteGame.getRouletteNum());
+                System.out.println();
                 System.out.println("You bet $" + bet + ", so " + bet*40 + " will be added to your balance");
                 balance += bet*40;
                 }
                 else
                 {
-                    System.out.println("Sorry, you guessed incorrectly. The roulette wheel landed on " + rouletteGame.rouletteNum);
+                    System.out.println("Sorry, you guessed incorrectly. The roulette wheel landed on " + rouletteGame.getRouletteNum());
                     balance -= bet;
                 }
             }
@@ -109,6 +116,7 @@ public class Casino
             {
                 System.out.println("You've chosen a low risk game of roulette. You can bet on either");
                 System.out.println("odd or evens. If you win, you will win 2x the bet you place!");
+                System.out.println();
                 System.out.println("How much would you like to bet? (please type a number without '$')");
                 int bet = scan.nextInt();
                 System.out.println("Would you like to bet on odds or evens? Type either 'odds' or 'evens'.");
@@ -116,7 +124,7 @@ public class Casino
                 Roulette rouletteGame = new Roulette();
                 if(rouletteGame.winLow(oddsOrEvens) == true)
                 {
-                    System.out.println("Congratulations! The roulette wheel landed on " + rouletteGame.rouletteNum + " and you correctly bet on " + oddsOrEvens);
+                    System.out.println("Congratulations! The roulette wheel landed on " + rouletteGame.getRouletteNum() + " and you correctly bet on " + oddsOrEvens);
                     System.out.println("You bet " + bet + " so $" + bet*2 + " will be added to your balance!");
                     balance += bet*2;
                 }
@@ -134,16 +142,19 @@ public class Casino
                     System.out.println("Sorry, you guessed incorrectly. The roulette wheel landed on an " + outcome + " number.");
                     balance -= bet;
                 }
-            
             }
             else
             {
             System.out.println("Please enter a valid game: slots or roulette");
             game = scan.nextLine();
             }
-            System.out.println("Your balance is now $ " + balance);
+            System.out.println("Your balance is now $" + balance);
+            System.out.println();
+            System.out.println("Would you like to play again? (y/n)");
+            yesNo = scan.nextLine();
         }
     }
     System.out.println("Your ending balance is $" + balance + ". Thanks for playing!");
+}
 }
 }
