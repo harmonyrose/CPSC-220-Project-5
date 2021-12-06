@@ -98,6 +98,7 @@ public class Casino
                 int bet = scan.nextInt();
                 System.out.println("Type the number between 0-36 you would like to bet on!");
                 int userNum = scan.nextInt();
+                String saveLine = scan.nextLine();
                 Roulette rouletteGame = new Roulette();
                 if(rouletteGame.winHigh(bet, userNum) == true)
                 {
@@ -119,13 +120,14 @@ public class Casino
                 System.out.println();
                 System.out.println("How much would you like to bet? (please type a number without '$')");
                 int bet = scan.nextInt();
+                String saveLine = scan.nextLine();
                 System.out.println("Would you like to bet on odds or evens? Type either 'odds' or 'evens'.");
                 String oddsOrEvens = scan.nextLine();
                 Roulette rouletteGame = new Roulette();
                 if(rouletteGame.winLow(oddsOrEvens) == true)
                 {
                     System.out.println("Congratulations! The roulette wheel landed on " + rouletteGame.getRouletteNum() + " and you correctly bet on " + oddsOrEvens);
-                    System.out.println("You bet " + bet + " so $" + bet*2 + " will be added to your balance!");
+                    System.out.println("You bet $" + bet + " so $" + bet*2 + " will be added to your balance!");
                     balance += bet*2;
                 }
                 else

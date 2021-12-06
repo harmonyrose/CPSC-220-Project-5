@@ -40,8 +40,7 @@ public class Roulette
     
     public boolean winLow(String oddsOrEvens)
     {
-        int rouletteNum = rand1.nextInt(37);
-        if((rouletteNum % 2 == 0 && oddsOrEvens.equals("evens")) || (rouletteNum %2 == 1 && oddsOrEvens.equals("odds")))
+        if((getRouletteNum() % 2 == 0 && oddsOrEvens.equals("evens")) || (getRouletteNum() %2 == 1 && oddsOrEvens.equals("odds")))
         {
             return true;
         }
@@ -53,7 +52,7 @@ public class Roulette
 
     public int getRouletteNum()
     {
-        int rouletteNum = rand1.nextInt();
+        int rouletteNum = rand1.nextInt(37);
         return rouletteNum;
     }
     
