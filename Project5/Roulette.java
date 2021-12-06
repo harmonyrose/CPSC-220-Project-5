@@ -17,6 +17,7 @@ public class Roulette
     public Roulette()
     {
         rand1 = new Random();
+        rouletteNum = rand1.nextInt(37);
     }
     
     public Roulette(int bet, int userNum, String oddsOrEvens)
@@ -25,6 +26,7 @@ public class Roulette
         userNum = this.userNum;
         oddsOrEvens = this.oddsOrEvens;
     }
+    
     /**
      * Simulates a game of high stake roulette where the player bets on one number.
      * 
@@ -34,7 +36,7 @@ public class Roulette
      */
     public boolean winHigh(int bet, int userNum)
     {
-        if(getRouletteNum() == userNum)
+        if(rouletteNum == userNum)
         {
             return true;
         }
@@ -51,7 +53,12 @@ public class Roulette
      */
     public boolean winLow(String oddsOrEvens)
     {
-        if((getRouletteNum() % 2 == 0 && oddsOrEvens.equals("evens")) || (getRouletteNum() %2 == 1 && oddsOrEvens.equals("odds")))
+        
+        if(rouletteNum % 2 == 0 && oddsOrEvens.equals("evens")) 
+        {
+            return true;
+        }
+        else if(rouletteNum % 2 == 1 && oddsOrEvens.equals("odds"))
         {
             return true;
         }
@@ -61,11 +68,6 @@ public class Roulette
         }
     } 
 
-    public int getRouletteNum()
-    {
-        int rouletteNum = rand1.nextInt(37);
-        return rouletteNum;
-    }
-    
+
     
 }

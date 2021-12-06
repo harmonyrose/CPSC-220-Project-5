@@ -102,14 +102,14 @@ public class Casino
                 Roulette rouletteGame = new Roulette();
                 if(rouletteGame.winHigh(bet, userNum) == true)
                 {
-                System.out.println("Congratulations! The roulette wheel landed on " + rouletteGame.getRouletteNum());
+                System.out.println("Congratulations! The roulette wheel landed on " + rouletteGame.rouletteNum);
                 System.out.println();
                 System.out.println("You bet $" + bet + ", so " + bet*40 + " will be added to your balance");
                 balance += bet*40;
                 }
                 else
                 {
-                    System.out.println("Sorry, you guessed incorrectly. The roulette wheel landed on " + rouletteGame.getRouletteNum());
+                    System.out.println("Sorry, you guessed incorrectly. The roulette wheel landed on " + rouletteGame.rouletteNum);
                     balance -= bet;
                 }
             }
@@ -124,9 +124,9 @@ public class Casino
                 System.out.println("Would you like to bet on odds or evens? Type either 'odds' or 'evens'.");
                 String oddsOrEvens = scan.nextLine();
                 Roulette rouletteGame = new Roulette();
-                if(rouletteGame.winLow(oddsOrEvens) == true)
+                if(rouletteGame.winLow(oddsOrEvens))
                 {
-                    System.out.println("Congratulations! The roulette wheel landed on " + rouletteGame.getRouletteNum() + " and you correctly bet on " + oddsOrEvens);
+                    System.out.println("Congratulations! The roulette wheel landed on " + rouletteGame.rouletteNum + " and you correctly bet on " + oddsOrEvens);
                     System.out.println("You bet $" + bet + " so $" + bet*2 + " will be added to your balance!");
                     balance += bet*2;
                 }
@@ -141,7 +141,7 @@ public class Casino
                     {
                         outcome = "odd";
                     }
-                    System.out.println("Sorry, you guessed incorrectly. The roulette wheel landed on an " + outcome + " number.");
+                    System.out.println("Sorry, you guessed incorrectly. The roulette wheel landed on " + rouletteGame.rouletteNum +", an " + outcome + " number.");
                     balance -= bet;
                 }
             }
