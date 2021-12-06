@@ -1,9 +1,9 @@
 import java.util.*;
 /**
- * Write a description of class Casino here.
+ * Simulates a casino with slots and roulette.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Harmony Peura
+ * @version 12/3/2021
  */
 public class Casino
 {

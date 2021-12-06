@@ -1,9 +1,9 @@
 import java.util.*;
 /**
- * Write a description of class Roulette here.
+ * Includes methods to simulate high or low risk games of roulette
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Harmony Peura
+ * @version 12/3/2021
  */
 public class Roulette
 {
@@ -25,7 +25,13 @@ public class Roulette
         userNum = this.userNum;
         oddsOrEvens = this.oddsOrEvens;
     }
-    
+    /**
+     * Simulates a game of high stake roulette where the player bets on one number.
+     * 
+     * @param bet The player's bet
+     * @param userNum The number (0-36) the player bets on
+     * @return Whether the player won or lost
+     */
     public boolean winHigh(int bet, int userNum)
     {
         if(getRouletteNum() == userNum)
@@ -37,7 +43,12 @@ public class Roulette
             return false;
         }
     }
-    
+    /**
+     * Simulates a game of low stake roulette where the player bets on either odds or evens.
+     * 
+     * @param oddsOrEvens A string representing whether the player bet on evens or odds
+     * @return Whether the player won or lost
+     */
     public boolean winLow(String oddsOrEvens)
     {
         if((getRouletteNum() % 2 == 0 && oddsOrEvens.equals("evens")) || (getRouletteNum() %2 == 1 && oddsOrEvens.equals("odds")))

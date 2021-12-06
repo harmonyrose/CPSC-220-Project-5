@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.io.*;
 /**
- * Methods for the casino games
+ * Simulates a game of slots
  *
  * @author Harmony Peura
  * @version 12/3/2021
@@ -25,7 +25,11 @@ public class Slots
         boolean win7;
     }
 
-    
+    /**
+     * Runs a single game of slots. This method determines if the player won, lost,
+     * or won the special 777.
+     * 
+     */
     public void runSlots()
     {
         int slot1 = rand1.nextInt(10);
