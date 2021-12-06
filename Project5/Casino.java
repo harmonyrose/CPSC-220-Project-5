@@ -100,7 +100,7 @@ public class Casino
                 int userNum = scan.nextInt();
                 String saveLine = scan.nextLine();
                 Roulette rouletteGame = new Roulette();
-                if(rouletteGame.winHigh(bet, userNum) == true)
+                if(rouletteGame.winHigh(userNum) == true)
                 {
                 System.out.println("Congratulations! The roulette wheel landed on " + rouletteGame.rouletteNum);
                 System.out.println();

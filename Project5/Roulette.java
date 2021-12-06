@@ -10,7 +10,6 @@ public class Roulette
     public int rouletteNum;
     
     private Random rand1;
-    private int bet;
     private int userNum;
     private String oddsOrEvens;
         
@@ -20,9 +19,8 @@ public class Roulette
         rouletteNum = rand1.nextInt(37);
     }
     
-    public Roulette(int bet, int userNum, String oddsOrEvens)
+    public Roulette(int userNum, String oddsOrEvens)
     {
-        bet = this.bet;
         userNum = this.userNum;
         oddsOrEvens = this.oddsOrEvens;
     }
@@ -34,7 +32,7 @@ public class Roulette
      * @param userNum The number (0-36) the player bets on
      * @return Whether the player won or lost
      */
-    public boolean winHigh(int bet, int userNum)
+    public boolean winHigh(int userNum)
     {
         if(rouletteNum == userNum)
         {
