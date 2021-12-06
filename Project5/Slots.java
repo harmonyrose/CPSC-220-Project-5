@@ -21,13 +21,10 @@ public class Slots
         rand1 = new Random();
         rand2 = new Random();
         rand3 = new Random();
+        boolean win;
+        boolean win7;
     }
-    
-    public Slots(boolean win, boolean win7)
-    {
-        this.win = win;
-        this.win7 = win7;
-    }
+
     
     public void runSlots()
     {

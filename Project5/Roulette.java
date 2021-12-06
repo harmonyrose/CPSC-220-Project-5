@@ -7,20 +7,26 @@ import java.util.*;
  */
 public class Roulette
 {
+    public int rouletteNum;
+    
     private Random rand1;
-    
-    
-    
-    
+    private int bet;
+    private int userNum;
+    private String oddsOrEvens;
+        
     public Roulette()
     {
-        Scanner input = new Scanner(System.in);
-        int single;
-        int bet = 0;
         rand1 = new Random();
     }
     
-    public boolean winSingleRoulette(int bet, int userNum)
+    public Roulette(int bet, int userNum, String oddsOrEvens)
+    {
+        bet = this.bet;
+        userNum = this.userNum;
+        oddsOrEvens = this.oddsOrEvens;
+    }
+    
+    public boolean winHigh(int bet, int userNum)
     {
         int rouletteNum = rand1.nextInt(37);
         if(rouletteNum == userNum)
@@ -30,4 +36,19 @@ public class Roulette
 
         return true;
     }
+    
+    public boolean winLow(String oddsOrEvens)
+    {
+        int rouletteNum = rand1.nextInt(37);
+        if((rouletteNum % 2 == 0 && oddsOrEvens.equals("evens")) || (rouletteNum %2 == 1 && oddsOrEvens.equals("odds")))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    } 
+    
+    
 }
